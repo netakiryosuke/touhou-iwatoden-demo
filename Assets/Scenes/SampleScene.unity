@@ -266,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527507603}
   - component: {fileID: 527507602}
+  - component: {fileID: 527507604}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -347,6 +348,86 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527507604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527507601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90d505f215c4541b30e68737bbc1273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShip.PlayerShip
+  moveInput:
+    m_Name: Move Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f7e2619d-1129-476a-a886-974bd0db580e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Move
+      m_Id: 1847c110-125d-4052-bb4d-a10f12b9228e
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 0e76590e-200f-458a-975d-b72a282986a3
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: c8769c37-4e49-4610-a519-04a938134bad
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: fd4b1b19-93ff-4876-af70-4f21f8c63edd
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: b17b7757-ab64-4ddb-ab8c-a2bb7d01df5a
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 8
+    m_Flags: 0
+  slowMoveInput:
+    m_Name: Slow Move Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bfe5f205-cfa2-42dc-bb74-3e376a57b5fd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 69637ede-e332-4102-9455-7ba70cbacd22
+      m_Path: <Keyboard>/shift
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Slow Move Input
+      m_Flags: 0
+    m_Flags: 0
+  normalSpeed: 4
+  slowSpeed: 2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
