@@ -18,7 +18,6 @@ namespace PlayerShip
             moveInput.canceled += OnMove;
             moveInput.Enable();
 
-            slowMoveInput.started += OnSlowMove;
             slowMoveInput.performed += OnSlowMove;
             slowMoveInput.canceled += OnSlowMove;
             slowMoveInput.Enable();
@@ -35,7 +34,6 @@ namespace PlayerShip
             moveInput.canceled -= OnMove;
             moveInput.Disable();
             
-            slowMoveInput.started -= OnSlowMove;
             slowMoveInput.performed -= OnSlowMove;
             slowMoveInput.canceled -= OnSlowMove;
             slowMoveInput.Disable();
