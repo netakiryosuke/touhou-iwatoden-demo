@@ -203,7 +203,7 @@ dotnet_naming_symbols.フィールド以外のメンバー.applicable_kinds = pr
 dotnet_naming_symbols.フィールド以外のメンバー.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
 dotnet_naming_symbols.フィールド以外のメンバー.required_modifiers =
 
-dotnet_naming_symbols.const.applicable_kinds = property, field, local, method, local_function
+dotnet_naming_symbols.const.applicable_kinds = property, field, local
 dotnet_naming_symbols.const.applicable_accessibilities = *
 dotnet_naming_symbols.const.required_modifiers = const
 
