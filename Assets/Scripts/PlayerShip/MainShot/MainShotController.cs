@@ -46,7 +46,7 @@ namespace PlayerShip.MainShot
         {
             foreach (var mainShotSpawnPoint in mainShotSpawnPoints)
             {
-                Instantiate(mainShotPrefab, mainShotSpawnPoint.position, transform.rotation);
+                Instantiate(mainShotPrefab, mainShotSpawnPoint.position, mainShotSpawnPoint.rotation);
             }
         }
     }
