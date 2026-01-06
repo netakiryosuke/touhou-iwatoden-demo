@@ -12,6 +12,11 @@ namespace PlayerShip
         private Vector2 _moveInputValue;
         private bool _isSlowMove;
 
+        private void Update()
+        {
+            Move();
+        }
+        
         private void OnEnable()
         {
             moveInput.performed += OnMove;
@@ -21,11 +26,6 @@ namespace PlayerShip
             slowMoveInput.performed += OnSlowMove;
             slowMoveInput.canceled += OnSlowMove;
             slowMoveInput.Enable();
-        }
-        
-        private void Update()
-        {
-            Move();
         }
         
         private void OnDisable()
