@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace PlayerShip.MainShot
@@ -9,6 +10,11 @@ namespace PlayerShip.MainShot
         private void Update()
         {
             transform.position += Vector3.up * (Time.deltaTime * mainShotSpeed);
+        }
+
+        private void OnBecameInvisible()
+        {
+            Destroy(gameObject);
         }
     }
 }
