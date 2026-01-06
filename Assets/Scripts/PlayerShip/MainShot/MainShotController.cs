@@ -10,7 +10,7 @@ namespace PlayerShip.MainShot
         [SerializeField] private Transform[] mainShotSpawnPoints;
         [SerializeField] private float mainShotInterval = 0.1f;
         private bool _isShooting;
-        private float _mainShotTimer;
+        private float _mainShotTimer = 0.1f;
 
         private void Update()
         {
