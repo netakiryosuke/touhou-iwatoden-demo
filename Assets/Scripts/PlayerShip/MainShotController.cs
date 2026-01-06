@@ -8,6 +8,7 @@ namespace PlayerShip
         [SerializeField] private InputAction shotInput;
         [SerializeField] private GameObject mainShotPrefab;
         [SerializeField] private Transform[] mainShotSpawnPoints;
+        [SerializeField] private float mainShotInterval = 0.1f;
         private bool _isShooting;
         private float _mainShotTimer;
 
@@ -15,7 +16,7 @@ namespace PlayerShip
         {
             _mainShotTimer += Time.deltaTime;
             
-            if (_isShooting && _mainShotTimer >= 0.1f)
+            if (_isShooting && _mainShotTimer >= mainShotInterval)
             {
                 MainShot();
                 _mainShotTimer = 0;
