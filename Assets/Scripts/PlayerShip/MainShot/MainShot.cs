@@ -6,7 +6,7 @@ namespace PlayerShip.MainShot
     {
         [SerializeField] private float mainShotSpeed = 70f;
         
-        public void Update()
+        private void Update()
         {
             transform.position += Vector3.up * (Time.deltaTime * mainShotSpeed);
         }
