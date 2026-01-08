@@ -7,6 +7,11 @@ namespace Enemy.MovePattern
     {
         public override void Initialize()
         {
+            
+        }
+        
+        private void Update()
+        {
             transform.position = Vector3.down * Time.deltaTime;
         }
     }
