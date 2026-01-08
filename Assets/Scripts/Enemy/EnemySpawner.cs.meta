@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 813b702bfd084b25a12663ff64e2b950
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyCsv: {fileID: 4900000, guid: 9f09482378ae429ba076cec293ae23a1, type: 3}
+  - enemyTypeMaster: {fileID: 11400000, guid: 64d2ba83e269cf341982aca702435399, type: 2}
+  - movePatternMaster: {fileID: 11400000, guid: 8e5f9b790b0d8a346b5f80849a7f69af, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
