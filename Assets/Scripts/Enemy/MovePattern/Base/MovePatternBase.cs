@@ -2,11 +2,8 @@ using UnityEngine;
 
 namespace Enemy.MovePattern.Base
 {
-    public class MovePatternBase : MonoBehaviour
+    public abstract class MovePatternBase : MonoBehaviour
     {
-        public virtual void Initialize()
-        {
-            
-        }
+        public abstract void Initialize();
     }
 }
