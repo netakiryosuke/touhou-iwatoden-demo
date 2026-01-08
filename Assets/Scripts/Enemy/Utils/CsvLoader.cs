@@ -7,9 +7,12 @@ namespace Enemy.Utils
     {
         public static Queue<EnemyData> Load(TextAsset csv)
         {
-            Queue<EnemyData> enemyDataQueue = new Queue<EnemyData>();
+            Queue<EnemyData> enemyDataQueue = new();
 
-            string[] lines = csv.text.Split('\n');
+            string[] lines = csv.text.Split(
+                new[] { '\r', '\n' },
+                System.StringSplitOptions.RemoveEmptyEntries
+            );
 
             for (int i = 1; i < lines.Length; i++)
             {
