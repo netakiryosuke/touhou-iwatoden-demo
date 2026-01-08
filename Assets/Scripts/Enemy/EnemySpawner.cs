@@ -56,7 +56,7 @@ namespace Enemy
 
         private void AttachPattern(GameObject enemy, MovePatternDefinition movePatternDefinition)
         {
-            Type type = movePatternDefinition.script.GetClass();
+            Type type = movePatternDefinition.movePattern.GetType();
             MovePatternBase pattern = enemy.AddComponent(type) as MovePatternBase;
             pattern.Initialize();
         }

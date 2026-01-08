@@ -1,4 +1,4 @@
-using UnityEditor;
+using Enemy.MovePattern.Base;
 using UnityEngine;
 
 namespace Enemy.MovePattern.ScriptableObject
@@ -7,6 +7,6 @@ namespace Enemy.MovePattern.ScriptableObject
     public class MovePatternDefinition : UnityEngine.ScriptableObject
     {
         public int id;
-        public MonoScript script;
+        public MovePatternBase movePattern;
     }
 }
