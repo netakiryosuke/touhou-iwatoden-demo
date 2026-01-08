@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MovePattern0
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.MovePattern.ScriptableObject.MovePatternDefinition
   id: 0
-  script: {fileID: 11500000, guid: d27ac095614844e8b60e702480215940, type: 3}
+  movePattern: {fileID: 7854425127525020738, guid: 4e04ca9e9086d0c44ab7d08b5d89273e, type: 3}
