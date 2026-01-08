@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy.MovePattern
 {
-    public class MovePattern1 : MovePatternBase
+    public class MovePattern0 : MovePatternBase
     {
         public override void Initialize()
         {
@@ -12,7 +12,7 @@ namespace Enemy.MovePattern
         
         private void Update()
         {
-            transform.position = Vector3.down * Time.deltaTime;
+            transform.position += Vector3.down * Time.deltaTime;
         }
     }
 }
