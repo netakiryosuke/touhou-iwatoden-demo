@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class EnemyData : MonoBehaviour
+    public class EnemyData
     {
-        public float spawnTime;
-        public Vector3 position;
-        public int enemyId;
-        public int movePatternId;
-        public int danmakuPatternId;
-        public float hp;
+        public float SpawnTime;
+        public Vector3 Position;
+        public int EnemyId;
+        public int MovePatternId;
+        public int DanmakuPatternId;
+        public float Hp;
     }
 }
