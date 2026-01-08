@@ -30,7 +30,7 @@ namespace Enemy
             _timer += Time.deltaTime;
 
             EnemyData next = _queue.Peek();
-            if (_timer >= next.SpawnTime)
+            if (_timer >= next.spawnTime)
             {
                 Spawn(next);
                 _queue.Dequeue();
@@ -40,15 +40,15 @@ namespace Enemy
         private void Spawn(EnemyData data)
         {
             // 敵生成
-            EnemyType.EnemyType enemyType = enemyTypeMaster.Get(data.EnemyId);
-            GameObject enemy = Instantiate(enemyType.prefab, data.Position, Quaternion.identity);
+            EnemyType.EnemyType enemyType = enemyTypeMaster.Get(data.enemyId);
+            GameObject enemy = Instantiate(enemyType.prefab, data.position, Quaternion.identity);
 
             // HP初期化
             // enemy.GetComponent<EnemyStatusManager>()
             //     .Initialize(data.hp);
 
             // 移動付与
-            AttachPattern(enemy, movePatternMaster.Get(data.MovePatternId));
+            AttachPattern(enemy, movePatternMaster.Get(data.movePatternId));
 
             // 弾幕付与（後回しでOK）
             // AttachPattern(enemy, danmakuPatternMaster.Get(data.danmakuPatternId));

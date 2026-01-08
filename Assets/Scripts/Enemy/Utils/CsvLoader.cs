@@ -20,12 +20,12 @@ namespace Enemy.Utils
                 enemyDataQueue.Enqueue(
                     new EnemyData
                     {
-                        SpawnTime = float.Parse(columns[0]),
-                        Position = new Vector3(float.Parse(columns[1]), float.Parse(columns[2]), 0),
-                        EnemyId = int.Parse(columns[3]),
-                        MovePatternId = int.Parse(columns[4]),
-                        DanmakuPatternId = int.Parse(columns[5]),
-                        Hp = float.Parse(columns[6]),
+                        spawnTime = float.Parse(columns[0]),
+                        position = new Vector3(float.Parse(columns[1]), float.Parse(columns[2]), 0),
+                        enemyId = int.Parse(columns[3]),
+                        movePatternId = int.Parse(columns[4]),
+                        danmakuPatternId = int.Parse(columns[5]),
+                        hp = float.Parse(columns[6]),
                     }
                 );
             }
