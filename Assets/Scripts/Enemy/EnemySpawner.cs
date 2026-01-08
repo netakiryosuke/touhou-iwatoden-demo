@@ -1,3 +1,4 @@
+using Enemy.EnemyType;
 using Enemy.MovePattern.Base;
 using Enemy.MovePattern.ScriptableObject;
 using Enemy.Utils;
@@ -39,7 +40,7 @@ namespace Enemy
         private void Spawn(EnemyData data)
         {
             // 敵生成
-            EnemyType enemyType = enemyTypeMaster.Get(data.EnemyId);
+            EnemyType.EnemyType enemyType = enemyTypeMaster.Get(data.EnemyId);
             GameObject enemy = Instantiate(enemyType.prefab, data.Position, Quaternion.identity);
 
             // HP初期化

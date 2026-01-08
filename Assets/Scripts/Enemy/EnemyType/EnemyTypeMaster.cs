@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemy
+namespace Enemy.EnemyType
 {
     [CreateAssetMenu(menuName = "Enemy/EnemyTypeMaster")]
     public class EnemyTypeMaster : ScriptableObject
