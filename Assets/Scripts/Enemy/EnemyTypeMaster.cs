@@ -13,5 +13,4 @@ namespace Enemy
             return enemyTypes.Find(x => x.id == id);
         }
     }
-
 }

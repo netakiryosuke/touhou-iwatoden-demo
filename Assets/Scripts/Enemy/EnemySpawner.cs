@@ -60,5 +60,4 @@ namespace Enemy
             pattern.Initialize();
         }
     }
-
 }

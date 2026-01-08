@@ -13,5 +13,4 @@ namespace Enemy.MovePattern.ScriptableObject
             return patterns.Find(x => x.id == id);
         }
     }
-
 }
