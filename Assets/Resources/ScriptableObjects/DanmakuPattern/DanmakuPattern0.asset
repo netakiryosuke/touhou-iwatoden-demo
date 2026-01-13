@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.DanmakuPattern.ScriptableObject.DanmakuPatternDefinition
   id: 0
   danmakuPattern: {fileID: 486190479595436732, guid: 8eae42e272003c149a928533d201d6ae, type: 3}
+  danmakuPrefab: {fileID: 501331131150580199, guid: 208803ded1e61c04993f465efd9396ae, type: 3}

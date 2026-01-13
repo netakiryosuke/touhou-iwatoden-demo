@@ -8,5 +8,6 @@ namespace Enemy.DanmakuPattern.ScriptableObject
     {
         public int id;
         public DanmakuPatternBase danmakuPattern;
+        public GameObject danmakuPrefab;
     }
 }
