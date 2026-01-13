@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Enemy.DanmakuPattern.ScriptableObject
 {
     [CreateAssetMenu(menuName = "Enemy/DanmakuPatternMaster")]
-    public class MovePatternMaster : UnityEngine.ScriptableObject
+    public class DanmakuPatternMaster : UnityEngine.ScriptableObject
     {
         public List<DanmakuPatternDefinition> patterns;
 
