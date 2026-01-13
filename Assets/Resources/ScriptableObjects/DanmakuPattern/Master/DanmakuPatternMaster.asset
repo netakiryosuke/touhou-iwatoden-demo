@@ -11,6 +11,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3000b6fc71d24e41981b7f9cd970692f, type: 3}
   m_Name: DanmakuPatternMaster
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy.DanmakuPattern.ScriptableObject.MovePatternMaster
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy.DanmakuPattern.ScriptableObject.DanmakuPatternMaster
   patterns:
   - {fileID: 11400000, guid: 7a3bdf1f2f60a9941bf4b7eea21e8c41, type: 2}
