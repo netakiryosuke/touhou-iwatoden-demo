@@ -643,6 +643,7 @@ MonoBehaviour:
   enemyCsv: {fileID: 4900000, guid: 9f09482378ae429ba076cec293ae23a1, type: 3}
   enemyTypeMaster: {fileID: 11400000, guid: 64d2ba83e269cf341982aca702435399, type: 2}
   movePatternMaster: {fileID: 11400000, guid: 8e5f9b790b0d8a346b5f80849a7f69af, type: 2}
+  danmakuPatternMaster: {fileID: 11400000, guid: 51a1e6678e55b784d9f5cf0192b28ec4, type: 2}
 --- !u!4 &1689426114
 Transform:
   m_ObjectHideFlags: 0

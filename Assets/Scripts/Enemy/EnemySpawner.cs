@@ -1,3 +1,5 @@
+using Enemy.DanmakuPattern.Base;
+using Enemy.DanmakuPattern.ScriptableObject;
 using Enemy.EnemyType;
 using Enemy.MovePattern.Base;
 using Enemy.MovePattern.ScriptableObject;
@@ -13,7 +15,7 @@ namespace Enemy
         [SerializeField] private TextAsset enemyCsv;
         [SerializeField] private EnemyTypeMaster enemyTypeMaster;
         [SerializeField] private MovePatternMaster movePatternMaster;
-        // [SerializeField] private DanmakuPatternMaster danmakuPatternMaster;
+        [SerializeField] private DanmakuPatternMaster danmakuPatternMaster;
 
         private Queue<EnemyData> _queue;
         private float _timer;
@@ -48,17 +50,24 @@ namespace Enemy
             //     .Initialize(data.hp);
 
             // 移動付与
-            AttachPattern(enemy, movePatternMaster.Get(data.movePatternId));
+            AttachMovePattern(enemy, movePatternMaster.Get(data.movePatternId));
 
-            // 弾幕付与（後回しでOK）
-            // AttachPattern(enemy, danmakuPatternMaster.Get(data.danmakuPatternId));
+            // 弾幕付与
+            AttachDanmakuPattern(enemy, danmakuPatternMaster.Get(data.danmakuPatternId));
         }
 
-        private void AttachPattern(GameObject enemy, MovePatternDefinition movePatternDefinition)
+        private void AttachMovePattern(GameObject enemy, MovePatternDefinition movePatternDefinition)
         {
             Type type = movePatternDefinition.movePattern.GetType();
             MovePatternBase pattern = enemy.AddComponent(type) as MovePatternBase;
             pattern.Initialize();
+        }
+        
+        private void AttachDanmakuPattern(GameObject enemy, DanmakuPatternDefinition danmakuPatternDefinition)
+        {
+            Type type = danmakuPatternDefinition.danmakuPattern.GetType();
+            DanmakuPatternBase pattern = enemy.AddComponent(type) as DanmakuPatternBase;
+            pattern.Initialize(danmakuPatternDefinition.danmakuPrefab);
         }
     }
 }
