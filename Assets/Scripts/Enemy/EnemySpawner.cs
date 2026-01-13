@@ -65,21 +65,9 @@ namespace Enemy
         
         private void AttachDanmakuPattern(GameObject enemy, DanmakuPatternDefinition danmakuPatternDefinition)
         {
-            if (danmakuPatternDefinition == null)
-            {
-                Debug.Log("DanmakuPatternDefinition is null");
-                return;
-            }
-
-            if (danmakuPatternDefinition.danmakuPattern == null)
-            {
-                Debug.Log($"DanmakuPattern is null (id={danmakuPatternDefinition.id})");
-                return;
-            }
-            
             Type type = danmakuPatternDefinition.danmakuPattern.GetType();
             DanmakuPatternBase pattern = enemy.AddComponent(type) as DanmakuPatternBase;
-            pattern.Initialize();
+            pattern.Initialize(danmakuPatternDefinition.danmakuPrefab);
         }
     }
 }

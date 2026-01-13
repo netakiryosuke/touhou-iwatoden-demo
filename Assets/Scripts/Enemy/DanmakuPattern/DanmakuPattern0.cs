@@ -6,12 +6,13 @@ namespace Enemy.DanmakuPattern
 {
     public class DanmakuPattern0 : DanmakuPatternBase
     {
-        [SerializeField] private GameObject danmakuPrefab;
+        private GameObject _danmakuPrefab;
         private float _timer;
         private float _interval;
         
-        public override void Initialize()
+        public override void Initialize(GameObject danmakuPrefab)
         {
+            _danmakuPrefab = danmakuPrefab;
             _interval = 0.5f;
         }
         
@@ -29,7 +30,7 @@ namespace Enemy.DanmakuPattern
         private void Fire()
         {
             GameObject danmaku = Instantiate(
-                danmakuPrefab,
+                _danmakuPrefab,
                 transform.position,
                 Quaternion.identity
             );
