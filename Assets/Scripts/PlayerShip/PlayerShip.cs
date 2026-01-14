@@ -18,6 +18,11 @@ namespace PlayerShip
         private bool _isInvincible;
         private SpriteRenderer _spriteRenderer;
 
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        
         private void Update()
         {
             if (_canControl)
@@ -85,17 +90,10 @@ namespace PlayerShip
             _canControl = false;
             _isInvincible = true;
 
-            // 一旦消す
-            gameObject.SetActive(false);
-            yield return null;
-
-            // リスポーン位置
             transform.position = new Vector3(0f, respawnY, 0f);
-            gameObject.SetActive(true);
 
             StartCoroutine(Blink());
 
-            // 上昇復帰
             while (transform.position.y < returnY)
             {
                 transform.position += Vector3.up * (2f * Time.deltaTime);
