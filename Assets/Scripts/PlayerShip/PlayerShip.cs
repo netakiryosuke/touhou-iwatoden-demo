@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,12 +10,26 @@ namespace PlayerShip
         [SerializeField] private InputAction slowMoveInput;
         [SerializeField] private float normalSpeed = 4f;
         [SerializeField] private float slowSpeed = 2f;
+        [SerializeField] private float respawnY = -3.5f;
+        [SerializeField] private float returnY = -2.5f;
         private Vector2 _moveInputValue;
         private bool _isSlowMove;
+        private bool _canControl = true;
+        private bool _isInvincible;
+        private SpriteRenderer _spriteRenderer;
+        private Coroutine _dieAndRespawnCoroutine;
 
+        private void Awake()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        
         private void Update()
         {
-            Move();
+            if (_canControl)
+            {
+                Move();
+            }
         }
         
         private void OnEnable()
@@ -60,6 +75,50 @@ namespace PlayerShip
                 transform.position += new Vector3(_moveInputValue.x, _moveInputValue.y, 0) * (normalSpeed * Time.deltaTime);
             }
         }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (_isInvincible || _dieAndRespawnCoroutine != null) return;
+
+            if (other.CompareTag("EnemyDanmaku") || other.CompareTag("Enemy"))
+            {
+                _dieAndRespawnCoroutine = StartCoroutine(DieAndRespawn());
+            }
+        }
+
+        private IEnumerator DieAndRespawn()
+        {
+            _canControl = false;
+            _isInvincible = true;
+
+            transform.position = new Vector3(0f, respawnY, 0f);
+
+            StartCoroutine(Blink());
+
+            while (transform.position.y < returnY)
+            {
+                transform.position += Vector3.up * (2f * Time.deltaTime);
+                yield return null;
+            }
+
+            _canControl = true;
+
+            yield return new WaitForSeconds(2f);
+            _isInvincible = false;
+            _dieAndRespawnCoroutine = null;
+        }
+
+        private IEnumerator Blink()
+        {
+            while (_isInvincible)
+            {
+                _spriteRenderer.color = new Color(1, 1, 1, 0.3f);
+                yield return new WaitForSeconds(0.1f);
+                _spriteRenderer.color = Color.white;
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            _spriteRenderer.color = Color.white;
+        }
     }
 }
-
