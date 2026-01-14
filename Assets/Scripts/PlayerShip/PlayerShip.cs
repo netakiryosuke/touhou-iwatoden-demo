@@ -17,6 +17,7 @@ namespace PlayerShip
         private bool _canControl = true;
         private bool _isInvincible;
         private SpriteRenderer _spriteRenderer;
+        private Coroutine _dieAndRespawnCoroutine;
 
         private void Awake()
         {
@@ -77,11 +78,11 @@ namespace PlayerShip
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (_isInvincible) return;
+            if (_isInvincible || _dieAndRespawnCoroutine != null) return;
 
             if (other.CompareTag("EnemyDanmaku") || other.CompareTag("Enemy"))
             {
-                StartCoroutine(DieAndRespawn());
+                _dieAndRespawnCoroutine = StartCoroutine(DieAndRespawn());
             }
         }
 
@@ -104,6 +105,7 @@ namespace PlayerShip
 
             yield return new WaitForSeconds(2f);
             _isInvincible = false;
+            _dieAndRespawnCoroutine = null;
         }
 
         private IEnumerator Blink()
