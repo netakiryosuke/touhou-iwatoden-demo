@@ -376,7 +376,7 @@ Transform:
   m_GameObject: {fileID: 527507601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27046, y: -1.20602, z: 0}
+  m_LocalPosition: {x: -2.94, y: -1.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -466,6 +466,8 @@ MonoBehaviour:
   slowSpeed: 2
   respawnY: -3.5
   returnY: -2.5
+  minLimit: {x: -6, y: -5}
+  maxLimit: {x: 1, y: 5}
 --- !u!114 &527507605
 MonoBehaviour:
   m_ObjectHideFlags: 0
