@@ -12,6 +12,8 @@ namespace PlayerShip
         [SerializeField] private float slowSpeed = 2f;
         [SerializeField] private float respawnY = -3.5f;
         [SerializeField] private float returnY = -2.5f;
+        [SerializeField] private Vector2 minLimit = new(-6f, -5f);
+        [SerializeField] private Vector2 maxLimit = new(1f, 5f);
         private Vector2 _moveInputValue;
         private bool _isSlowMove;
         private bool _canControl = true;
@@ -66,14 +68,15 @@ namespace PlayerShip
         
         private void Move()
         {
-            if (_isSlowMove)
-            {
-                transform.position += new Vector3(_moveInputValue.x, _moveInputValue.y, 0) * (slowSpeed * Time.deltaTime);
-            }
-            else
-            {
-                transform.position += new Vector3(_moveInputValue.x, _moveInputValue.y, 0) * (normalSpeed * Time.deltaTime);
-            }
+            float speed = _isSlowMove ? slowSpeed : normalSpeed;
+
+            Vector3 nextPos = transform.position +
+                              new Vector3(_moveInputValue.x, _moveInputValue.y, 0f) * speed * Time.deltaTime;
+
+            nextPos.x = Mathf.Clamp(nextPos.x, minLimit.x, maxLimit.x);
+            nextPos.y = Mathf.Clamp(nextPos.y, minLimit.y, maxLimit.y);
+
+            transform.position = nextPos;
         }
         
         private void OnTriggerEnter2D(Collider2D other)
