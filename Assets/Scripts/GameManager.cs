@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utils;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
         _life--;
 
-        // DanmakuClearer.ClearAll();
+        DanmakuClearer.ClearAll();
 
         if (_life < 0)
         {
