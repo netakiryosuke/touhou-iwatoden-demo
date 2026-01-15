@@ -1,5 +1,6 @@
 using Enemy.DanmakuPattern.Base;
 using Enemy.DanmakuPattern.DanmakuMove;
+using Enemy.DanmakuPattern.Destroy;
 using UnityEngine;
 
 namespace Enemy.DanmakuPattern
@@ -36,6 +37,7 @@ namespace Enemy.DanmakuPattern
             );
 
             danmaku.AddComponent<DanmakuMove0>();
+            danmaku.AddComponent<DanmakuOutOfFieldDestroy>();
         }
     }
 }
