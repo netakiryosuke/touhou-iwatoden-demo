@@ -84,6 +84,7 @@ namespace PlayerShip
 
             if (other.CompareTag("EnemyDanmaku") || other.CompareTag("Enemy"))
             {
+                GameManager.Instance.OnPlayerHit();
                 _respawnCoroutine = StartCoroutine(Respawn());
             }
         }
