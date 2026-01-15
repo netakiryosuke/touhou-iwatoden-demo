@@ -46,8 +46,8 @@ namespace Enemy
             GameObject enemy = Instantiate(enemyType.prefab, data.position, Quaternion.identity);
 
             // HP初期化
-            // enemy.GetComponent<EnemyStatusManager>()
-            //     .Initialize(data.hp);
+            enemy.GetComponent<EnemyStatusManager>()
+                .Initialize(data.hp);
 
             // 移動付与
             AttachMovePattern(enemy, movePatternMaster.Get(data.movePatternId));
