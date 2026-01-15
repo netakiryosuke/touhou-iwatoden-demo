@@ -10,5 +10,20 @@ namespace Enemy
         {
             _hp = hp;
         }
+        
+        public void TakeDamage(float damage)
+        {
+            _hp -= damage;
+
+            if (_hp <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }
