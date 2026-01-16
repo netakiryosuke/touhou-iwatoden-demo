@@ -9,9 +9,16 @@ namespace PlayerShip.MainShot
         [SerializeField] private GameObject mainShotPrefab;
         [SerializeField] private Transform[] mainShotSpawnPoints;
         [SerializeField] private float mainShotInterval = 0.1f;
+        [SerializeField] private AudioClip shotSE;
+        private AudioSource _audioSource;
         private bool _isShooting;
         private float _mainShotTimer = 0.1f;
 
+        private void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+        
         private void Update()
         {
             _mainShotTimer += Time.deltaTime;
@@ -48,6 +55,8 @@ namespace PlayerShip.MainShot
             {
                 Instantiate(mainShotPrefab, mainShotSpawnPoint.position, mainShotSpawnPoint.rotation);
             }
+            
+            _audioSource.PlayOneShot(shotSE);
         }
     }
 }
