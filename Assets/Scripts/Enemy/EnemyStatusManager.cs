@@ -52,7 +52,7 @@ namespace Enemy
         
         private void Die()
         {
-            _audioSource.PlayOneShot(deathSE);
+            AudioSource.PlayClipAtPoint(deathSE, transform.position);
             Destroy(gameObject);
         }
     }
