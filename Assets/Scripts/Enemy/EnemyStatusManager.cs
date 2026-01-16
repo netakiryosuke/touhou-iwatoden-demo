@@ -6,6 +6,7 @@ namespace Enemy
     {
         [SerializeField] private AudioClip damageSE;
         [SerializeField] private AudioClip lowHpDamageSE;
+        [SerializeField] private AudioClip deathSE;
         [SerializeField] private float lowHpThreshold = 0.3f;
         private float _maxHp;
         private float _hp;
@@ -51,6 +52,7 @@ namespace Enemy
         
         private void Die()
         {
+            _audioSource.PlayOneShot(deathSE);
             Destroy(gameObject);
         }
     }
